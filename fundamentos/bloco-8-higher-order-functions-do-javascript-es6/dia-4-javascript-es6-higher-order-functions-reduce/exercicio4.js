@@ -64,7 +64,15 @@ const books = [
 ];
 
 function longestNamedBook() {
-  // escreva seu código aqui
+  let longest = books[0];
+
+  books.forEach((book) => {
+    if (book.name.length > longest.name.length) {
+      longest = book;
+    }
+  });
+
+  return longest;
 }
 
 assert.deepStrictEqual(longestNamedBook(), expectedResult);
