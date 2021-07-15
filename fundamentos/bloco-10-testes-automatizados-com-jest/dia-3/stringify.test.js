@@ -6,6 +6,11 @@ describe('stringify functions', () => {
     stringify.toUpper.mockImplementation((str) => str.toLowerCase());
 
     expect(stringify.toUpper('ABC')).toBe('abc');
+
+    stringify.toUpper.mockRestore();
+    stringify.toUpper.mockImplementation((str) => str.toUpperCase());
+
+    expect(stringify.toUpper('abc')).toBe('ABC');
   });
 
   test('mock firstLetter', () => {
